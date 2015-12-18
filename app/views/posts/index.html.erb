@@ -1,0 +1,40 @@
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header header1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>USA</h1>
+                        <hr class="small">
+                        <span class="subheading">University Of South Asia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+           <% @posts.each do |p| %>
+           <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            <%= link_to p.title, post_path(p)%><br>
+                        </h2>
+                       <!-- <h3 class="post-subtitle">
+                            Problems look mighty small from 150 miles up
+                        </h3> -->
+                    </a>
+                    <p class="post-meta"> <%= link_to "EDIT HERE POST",edit_post_path(p) %>
+<%= link_to "DELETE", post_path(p), method: :delete,data: {confirm: "ARE "} %><br></p>
+                </div>
+            <% end %>
+
+           </div>
+        </div>
+    </div>
+
+<!--<%= link_to "NEW POST", new_path %>-->	
